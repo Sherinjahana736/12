@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: data-exhaust-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn -w 2 -k uvicorn.workers.UvicornWorker main:app
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://your-frontend.onrender.com
