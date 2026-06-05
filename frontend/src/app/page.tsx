@@ -5,7 +5,7 @@ import ReactFlow, { Background, Controls, Edge, MarkerType, Node } from "reactfl
 import { createColumnHelper, getCoreRowModel, useReactTable, flexRender } from "@tanstack/react-table";
 import "reactflow/dist/style.css";
 
-const API_URL = "http://127.0.0.1:8000/api/exhaust-data";
+const API_URL = "https://one2-2-l5hl.onrender.com/api/exhaust-data";
 const FILTER_KEYS = ["all", "device", "location", "network", "ad_identifiers", "biometrics"] as const;
 type CategoryKey = "app_events" | "sdk_telemetry" | "location_matrices" | "ad_request_sequences";
 type FilterKey = (typeof FILTER_KEYS)[number];
