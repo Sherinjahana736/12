@@ -109,6 +109,11 @@ def generate_exhaust_dataframe() -> pd.DataFrame:
     return df
 
 
+@app.get("/")
+def root():
+    return {"status": "ok", "message": "Data Exhaust Intelligence API is running. Visit /docs for the API reference or /api/exhaust-data for data."}
+
+
 @app.get("/api/exhaust-data")
 def get_exhaust_data():
     df = generate_exhaust_dataframe()
