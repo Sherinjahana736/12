@@ -1,5 +1,15 @@
 services:
   - type: web
+    name: data-exhaust-frontend
+    runtime: node
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  - type: web
     name: data-exhaust-backend
     runtime: python
     rootDir: backend
